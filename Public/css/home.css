@@ -1,0 +1,12 @@
+* {
+    font-family: 'Odibee Sans', cursive;
+    /*color: #011826;*/
+}
+
+body {
+    /*background-image: url('Public/img/background.jpeg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}

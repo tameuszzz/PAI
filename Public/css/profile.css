@@ -1,0 +1,65 @@
+.container {
+    font-size: 1.5em;
+    background-color: rgba(1,24,38,.7);
+    color: #F28627;
+    margin-top: 5em;
+    text-align: center;
+}
+
+.container h1 {
+    margin: 0.2em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.5em;
+}
+
+.container h4 {
+    margin: 0.1em;
+}
+
+.description label{
+    float: left;
+}
+
+.fav-game {
+    margin-top: 1.5em;
+}
+
+select.form-control {
+    margin-left: 4em;
+}
+
+.file-upload {
+    font-size: 0.7em;
+}
+
+.container button {
+    margin-top: 1.5em;
+    color: #011826;
+    border-radius: 10px;
+    width: 5em;
+    letter-spacing: 0.1em;
+}
+
+.container button:hover {
+    background-color: #011826;
+    border-color: #F28627;
+    color: #F28627;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        margin-top: 3em;
+    }
+    select.form-control {
+    margin-left: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 1em;
+    }
+    select.form-control {
+    margin-left: 0.5em;
+    }
+}
