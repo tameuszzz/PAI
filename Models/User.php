@@ -16,8 +16,8 @@ class User {
         string $gender,
         string $age,
         string $gameType,
-        //string $description,
-        //string $photo,
+        string $description = "",
+        string $photo = "",
         int $id = null
     ){
         $this->email = $email;
@@ -26,8 +26,8 @@ class User {
         $this->gender = $gender;
         $this->age = $age;
         $this->gameType = $gameType;
-        //$this->description = $description;
-        //$this->photo = $photo;
+        $this->description = $description;
+        $this->photo = $photo;
         $this->id = $id;
     }
 

@@ -1,17 +1,16 @@
 <?php
 
 require_once 'AppController.php';
-require_once 'Models/User.php';
-require_once 'Repository/UserRepository.php';
-require_once 'Repository/Repository.php';
+require_once __DIR__ . '//..//Models//User.php';
+require_once __DIR__ . '//..//Repository//UserRepository.php';
 
 class SecurityController extends AppController {
 
     public function login() {
 
-        if ($this->isPost()) {
+        $userRepository = new UserRepository();
 
-            $userRepository = new UserRepository();
+        if ($this->isPost()) {
 
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -19,13 +18,15 @@ class SecurityController extends AppController {
             if ($userRepository->isUserRegistered($email, $password)) {
 
                 $_SESSION['id'] = $email;
-                $url = "http://$_SERVER[HTTP_HOST]/gameder";
+                $url = "http://$_SERVER[HTTP_HOST]/PAI";
                 header("Location: {$url}?page=home");
+
             } else {
                 $this->renderPage('login', ['messages' => 'Podany email lub hasło są nieprawidłowe!']);
             }
         } else if (isset($_SESSION['id'])) {
-            $this->renderPage('home');
+            $url = "http://$_SERVER[HTTP_HOST]/PAI";
+            header("Location: {$url}?page=home");
         } else if (isset($_SESSION['registration'])) {
             $message = $_SESSION['registration'];
             $_SESSION['registration'] = null;
@@ -69,7 +70,7 @@ class SecurityController extends AppController {
                 } else {
                     $userRepository->addUser($email, md5($password), $name, $gender, $age, $gameType);
                     $_SESSION['registration'] = ['messages' => 'Accountant has been created.', 'color' => '#F28627'];
-                    $url = "http://$_SERVER[HTTP_HOST]/gameder/";
+                    $url = "http://$_SERVER[HTTP_HOST]/PAI/";
                     header("Location: {$url}?page=login");
                 }
             }
