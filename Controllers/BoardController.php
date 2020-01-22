@@ -34,11 +34,41 @@ class BoardController extends AppController {
             $this->renderPage('profile', ['name' => $user->getName(),
                                                 'gender' => $user->getGender(),
                                                 'birthday' => $user->getAge(),
-                                                'fav-type' => $user->getGameType(),
+                                                'gameType' => $user->getGameType(),
                                                 'description' => $user->getDescription(),
                                                 'photo' => $user->getPhoto(),
                                                 'fileError' => $_SESSION['fileError']]);
             $_SESSION['fileError'] = null;
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/PAI/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
+    public function loadGames() {
+        if (isset($_SESSION['id'])) {
+            $this->renderPage('mygames');
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/PAI/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
+    public function loadMessages() {
+        if (isset($_SESSION['id'])) {
+            $this->renderPage('messages');
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/PAI/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
+    public function loadSettings() {
+        if (isset($_SESSION['id'])) {
+            $this->renderPage('settings');
         }
         else {
             $url = "http://$_SERVER[HTTP_HOST]/PAI/";

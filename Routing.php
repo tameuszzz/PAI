@@ -34,6 +34,18 @@ class Routing {
             'upload' => [
                 'controller' => 'UploadController',
                 'action' => 'upload'
+            ],
+            'settings' => [
+                'controller' => 'BoardController',
+                'action' => 'loadSettings'
+            ],
+            'mygames' => [
+                'controller' => 'BoardController',
+                'action' => 'loadGames'
+            ],
+            'messages' => [
+                'controller' => 'BoardController',
+                'action' => 'loadMessages'
             ]
         ];
     }

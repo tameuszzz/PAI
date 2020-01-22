@@ -142,6 +142,18 @@ class UserRepository extends Repository {
 
         try {
 
+            $stmt = $pdo->prepare("SELECT gameType FROM user WHERE email=:email");
+            $stmt->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
+            $stmt->execute();
+            $currentType = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($currentType != $gameType) {
+                $stmt = $pdo->prepare("UPDATE user SET gameType=:gameType WHERE email=:email");
+                $stmt->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
+                $stmt->bindParam(':gameType', $gameType, PDO::PARAM_STR);
+                $stmt->execute();
+            }
+
             $stmt = $pdo->prepare("SELECT id_userdetails FROM user WHERE email=:email");
             $stmt->bindParam(':email', $_SESSION['id'], PDO::PARAM_STR);
             $stmt->execute();

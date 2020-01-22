@@ -45,7 +45,7 @@ class SecurityController extends AppController {
             $repeatPassword = $_POST['repeatPassword'];
             $gender = $_POST['gender'];
             $age = $_POST['birthday'];
-            $gameType = $_POST['fav-type'];
+            $gameType = $_POST['gameType'];
 
             $today = new DateTime(date("Y-m-d"));
             $bday = new DateTime($age);

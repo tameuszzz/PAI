@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-.container h1 {
+.container h1, h2 {
     margin: 0.2em;
     letter-spacing: 0.1em;
     word-spacing: 0.5em;
@@ -30,6 +30,7 @@ select.form-control {
 
 .file-upload {
     font-size: 0.7em;
+    margin-left: 2em;
 }
 
 .container button {
@@ -46,12 +47,22 @@ select.form-control {
     color: #F28627;
 }
 
+.user-pic img{
+    width: 10em;
+    padding: 0.2em;
+    margin: auto;
+    overflow: hidden;
+}
+
 @media screen and (max-width: 992px) {
     .container {
         margin-top: 3em;
     }
     select.form-control {
-    margin-left: 2em;
+        margin-left: 2em;
+    }
+    .file-upload {
+        margin-left: 0;
     }
 }
 
@@ -62,4 +73,12 @@ select.form-control {
     select.form-control {
     margin-left: 0.5em;
     }
+    .file-upload {
+        margin-left: 5em;
+    }
+    .container button {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
 }

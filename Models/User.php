@@ -83,7 +83,7 @@ class User {
         $this->age = $age;
     }
 
-    public function setGameType($leg): void {
+    public function setGameType($gameType): void {
         $this->leg = $gameType;
     }
 

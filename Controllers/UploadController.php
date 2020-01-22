@@ -8,7 +8,7 @@ class UploadController extends AppController {
 
         if (isset($_SESSION['id'])) {
 
-            $gameType = $_POST['fav-type'];
+            $gameType = $_POST['gameType'];
             $description = $_POST['description'];
             $photo = "";
 

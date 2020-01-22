@@ -10,13 +10,13 @@
                     <a class='nav-link active' href='?page=profile'><i class='fas fa-user-alt'></i> Profile</a>
                 </li>
                 <li class='nav-item'>
-                    <a class='nav-link active' href=''><i class='fas fa-chess-knight'></i> Games</a>
+                    <a class='nav-link active' href='?page=mygames'><i class='fas fa-chess-knight'></i> Games</a>
                 </li>
                 <li class='nav-item'>
-                    <a class='nav-link active' href=''><i class='fas fa-comments'></i> Messages</a>
+                    <a class='nav-link active' href='?page=messages'><i class='fas fa-comments'></i> Messages</a>
                 </li>
                 <li class='nav-item'>
-                    <a class='nav-link active' href=''><i class='fas fa-cog'></i> Settings</a>
+                    <a class='nav-link active' href='?page=settings'><i class='fas fa-cog'></i> Settings</a>
                 </li>
                 <li class='nav-item'>
                     <a class='nav-link active' href='?page=logout'><i class='fas fa-sign-out-alt'></i> Logout </a>

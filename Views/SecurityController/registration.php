@@ -2,13 +2,10 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <?php include("Views/Common/headings.php") ?>
     <title>Gameder - Registration</title>
-    <link rel="stylesheet" type="text/css" href="Public/css/login.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7a5a5490a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Public/css/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -103,7 +100,7 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-puzzle-piece"></i></div>
                       </div>
-                      <select class="form-control" name="fav-type" placeholder="Re Enter Password">
+                      <select class="form-control" name="gameType" placeholder="Re Enter Password">
                         <option value="" selected hidden="">Favourite Game Type</option>
                         <option value="Cooperative" >Cooperative</option>
                         <option value="Roll and Move" >Roll and Move</option>

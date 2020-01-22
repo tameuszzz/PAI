@@ -5,7 +5,7 @@
 
     <?php include("Views/Common/headings.php") ?>
 
-    <title>Gameder - Home</title>
+    <title>Gameder - Games</title>
     <link rel="stylesheet" href="Public/css/home.css">
     <link rel="stylesheet" href="Public/css/navbar.css">
 
@@ -21,7 +21,7 @@
 
 <?php include("Views/Common/navbar.php") ?>
 
-<button>Szukaj Gier</button>
+<h1>Games</h1>
 
 </body>
 </html>
