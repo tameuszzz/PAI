@@ -23,7 +23,7 @@
     <?php include("Views/Common/navbar.php") ?>
 
  <div class="container bootstrap snippet">
-    <form action="?page=upload" method="POST" ENCTYPE="multipart/form-data">
+    <form action="?page=uploadProfile" method="POST" ENCTYPE="multipart/form-data">
         <div class="row">
             <div class="col-sm-12"><h1>Your Profile</h1></div>
         </div>
@@ -35,7 +35,7 @@
                                     echo "<img src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png' class='avatar img-circle img-thumbnail' alt='avatar'>";
                                 }
                                 else {
-                                    echo "<img '<img src='Public/img/uploads/$photo' class='avatar img-circle img-thumbnail' alt='avatar'>";
+                                    echo "<img src='Public/img/uploads/$photo' class='avatar img-circle img-thumbnail' alt='avatar'>";
                                 }
                             ?>
                         </div>
@@ -77,13 +77,14 @@
                         <div class="input-group fav-game">
                               <label><i class="fas fa-puzzle-piece"></i> Favourite Game Type:</label>
                               <select class="form-control" name="gameType">
-                                <option <?php if(isset($gameType) && $gameType == 'Cooperative') echo 'selected' ?> value="Cooperative" >Cooperative</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Roll and Move') echo 'selected' ?> value="Roll and Move" >Roll and Move</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Deck Building') echo 'selected' ?> value="Deck Building" >Deck Building</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Area Control') echo 'selected' ?> value="Area Control" >Area Control</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Puzzles') echo 'selected' ?> value="Puzzles" >Puzzles</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Party Games') echo 'selected' ?> value="Party Games" >Party Games</option>
-                                <option <?php if(isset($gameType) && $gameType == 'Secret Identity') echo 'selected' ?> value="Secret Identity" >Secret Identity</option>
+                                <option <?php if(isset($gameType) && $gameType == '0') echo 'selected hidden' ?> value="0" >Choose your fav type of games</option>
+                                <option <?php if(isset($gameType) && $gameType == '1') echo 'selected' ?> value="1" >Cooperative</option>
+                                <option <?php if(isset($gameType) && $gameType == '2') echo 'selected' ?> value="2" >Roll and Move</option>
+                                <option <?php if(isset($gameType) && $gameType == '3') echo 'selected' ?> value="3" >Deck Building</option>
+                                <option <?php if(isset($gameType) && $gameType == '4') echo 'selected' ?> value="4" >Area Control</option>
+                                <option <?php if(isset($gameType) && $gameType == '5') echo 'selected' ?> value="5" >Puzzles</option>
+                                <option <?php if(isset($gameType) && $gameType == '6') echo 'selected' ?> value="6" >Party Games</option>
+                                <option <?php if(isset($gameType) && $gameType == '7') echo 'selected' ?> value="7" >Secret Identity</option>
                               </select>
                         </div>
                     </center>
@@ -94,9 +95,7 @@
     </form>
 </div>
 
-
-
-
+<?php include("Views/Common/footer.php") ?>
 
 </body>
 </html>

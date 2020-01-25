@@ -3,6 +3,7 @@ require_once 'Controllers/SecurityController.php';
 require_once 'Controllers/BoardController.php';
 require_once 'Controllers/AdminController.php';
 require_once 'Controllers/UploadController.php';
+require_once 'Controllers/GameController.php';
 
 class Routing {
 
@@ -27,13 +28,21 @@ class Routing {
                 'controller' => 'BoardController',
                 'action' => 'loadHome'
             ],
+            'searchGames' => [
+                'controller' => 'GameController',
+                'action' => 'searchGames'
+            ],
             'profile' => [
                 'controller' => 'BoardController',
                 'action' => 'loadProfile'
             ],
-            'upload' => [
+            'uploadProfile' => [
                 'controller' => 'UploadController',
-                'action' => 'upload'
+                'action' => 'uploadProfile'
+            ],
+            'uploadGame' => [
+                'controller' => 'UploadController',
+                'action' => 'uploadGame'
             ],
             'settings' => [
                 'controller' => 'BoardController',
@@ -42,6 +51,14 @@ class Routing {
             'mygames' => [
                 'controller' => 'BoardController',
                 'action' => 'loadGames'
+            ],
+            'loadmygames' => [
+                'controller' => 'GameController',
+                'action' => 'loadMyGames'
+            ],
+            'deleteGame' => [
+                'controller' => 'GameController',
+                'action' => 'gameDelete'
             ],
             'messages' => [
                 'controller' => 'BoardController',

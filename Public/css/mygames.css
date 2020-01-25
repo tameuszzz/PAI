@@ -1,0 +1,231 @@
+.container {
+    font-size: 1.5em;
+    color: #F28627;
+    margin-top: 4em;
+    text-align: center;
+}
+
+/* SELECT */
+
+h1 {
+    padding: 0.1em;
+    margin: auto;
+}
+
+.not-empty {
+    background-color: rgba(1,24,38,.7);
+}
+
+.empty-row {
+    height: 1em;
+}
+
+.usefull {
+    padding: 1em;
+}
+
+.usefull > h3 {
+    font-size: 1.5em;
+}
+
+.usefull-btn > a > i {
+    font-size: 5em;
+}
+
+.usefull-link {
+    color: #F28627;
+}
+
+.usefull-link:hover {
+    color: #F28627 !important;
+    font-size: 1.1em;
+}
+
+.usefull-link:active {
+    color: #011826 !important;
+}
+
+span.message {
+    font-size: 1.6em;
+}
+
+/* ADDING GAME */
+
+.add-div {
+    padding: 1em;
+}
+
+label {
+    margin-right: 1em;
+}
+
+input, select {
+    height: 1.6em;
+    width: 7em;
+}
+
+.file-upload {
+    font-size: 0.7em;
+    margin-left: 2em;
+}
+
+.container button {
+    margin-top: 0.5em;
+    color: #011826;
+    border-radius: 10px;
+    width: 5em;
+    letter-spacing: 0.1em;
+}
+
+.container button:hover {
+    background-color: #011826;
+    border-color: #F28627;
+    color: #F28627;
+}
+
+.add-div > .row {
+    margin-bottom: 1em;
+}
+
+.to-right {
+    text-align: right;
+    padding: 0;
+}
+
+.to-left {
+    text-align: left;
+    padding: 0;
+}
+
+/* VIEWING GAMES */
+img.game-pic {
+    max-height: 5em;
+    max-width: 5em;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    min-width: 5em;
+    border-top: solid 2px #F28627;
+    max-height: 5em;
+    overflow: hidden;
+}
+
+td#description {
+    overflow: auto;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        margin-top: 4em;
+        padding: 0;
+    }
+    input, select {
+        height: 1.5em;
+        width: 5em;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: "Picture"; }
+    td:nth-of-type(2):before { content: "Name"; }
+    td:nth-of-type(3):before { content: "Players"; }
+    td:nth-of-type(4):before { content: "Description"; }
+    td:nth-of-type(5):before { content: "Delete"; }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 2em;
+        padding: 0;
+    }
+    .not-empty {
+        margin-top: 2em;
+    }
+    input, select {
+        height: 1.2em;
+        width: 5em;
+    }
+    .to-right {
+        text-align: center;
+    }
+
+    .to-left {
+        text-align: center;
+    }
+
+    img.game-pic {
+        max-height: 3em;
+        max-width: 3em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: "Picture"; }
+    td:nth-of-type(2):before { content: "Name"; }
+    td:nth-of-type(3):before { content: "Players"; }
+    td:nth-of-type(4):before { content: "Description"; }
+    td:nth-of-type(5):before { content: "Delete"; }
+}

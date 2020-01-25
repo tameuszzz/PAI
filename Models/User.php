@@ -5,9 +5,10 @@ class User {
     private $name;
     private $gender;
     private $age;
-    private $gameType;
+    private $id_town;
     private $description;
     private $photo;
+    private $gameType;
 
     public function __construct(
         string $email,
@@ -15,9 +16,10 @@ class User {
         string $name,
         string $gender,
         string $age,
-        string $gameType,
+        string $town,
         string $description = "",
         string $photo = "",
+        int $gameType = 0,
         int $id = null
     ){
         $this->email = $email;
@@ -25,9 +27,10 @@ class User {
         $this->name = $name;
         $this->gender = $gender;
         $this->age = $age;
-        $this->gameType = $gameType;
+        $this->town = $town;
         $this->description = $description;
         $this->photo = $photo;
+        $this->gameType = $gameType;
         $this->id = $id;
     }
 
@@ -55,17 +58,22 @@ class User {
         return $this->age;
     }
 
-    public function getGameType(): string {
-        return $this->gameType;
+    public function getTown(): string {
+        return $this->town;
     }
 
-    public function getDescription() {
+    public function getDescription(): string {
         return $this->description;
     }
 
-    public function getPhoto() {
+    public function getPhoto(): string {
         return $this->photo;
     }
+
+    public function getGameType(): int {
+        return $this->gameType;
+    }
+
 
     public function setEmail($email): void {
         $this->email = $email;
@@ -83,8 +91,8 @@ class User {
         $this->age = $age;
     }
 
-    public function setGameType($gameType): void {
-        $this->leg = $gameType;
+    public function setId_town($id_town): void {
+        $this->id_town = $id_town;
     }
 
     public function setDescription($description): void {
@@ -93,5 +101,9 @@ class User {
 
     public function setPhoto($photo): void {
         $this->photo = $photo;
+    }
+
+    public function setGameType($gameType): void {
+        $this->gameType = $gameType;
     }
 }

@@ -45,13 +45,13 @@ class SecurityController extends AppController {
             $repeatPassword = $_POST['repeatPassword'];
             $gender = $_POST['gender'];
             $age = $_POST['birthday'];
-            $gameType = $_POST['gameType'];
+            $id_town = $_POST['id_town'];
 
             $today = new DateTime(date("Y-m-d"));
             $bday = new DateTime($age);
             $interval = $today->diff($bday);
 
-            if (empty($name) || empty($password) || empty($repeatPassword) || empty($gender) || empty($age) || empty($gameType))
+            if (empty($name) || empty($password) || empty($repeatPassword) || empty($gender) || empty($age) || empty($id_town))
             {
                 $this->renderPage('registration', ['messages' => 'Musisz wypelnic wszystkie pola!']);
             }
@@ -68,7 +68,7 @@ class SecurityController extends AppController {
                 } else if (intval($interval->y) < 13) {
                     $this->renderPage('registration', ['messages' => 'Musisz mieć ukończone 13 lat!']);
                 } else {
-                    $userRepository->addUser($email, md5($password), $name, $gender, $age, $gameType);
+                    $userRepository->addUser($email, md5($password), $name, $gender, $age, $id_town);
                     $_SESSION['registration'] = ['messages' => 'Accountant has been created.', 'color' => '#F28627'];
                     $url = "http://$_SERVER[HTTP_HOST]/PAI/";
                     header("Location: {$url}?page=login");

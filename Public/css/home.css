@@ -10,3 +10,38 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+
+footer{
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    bottom:0;
+    width: 100%;
+    margin: 0;
+    height: 2em;
+    color: #F28627;
+    background-color: #011826;
+    opacity: 80%;
+    letter-spacing: 0.1em;
+    word-spacing: 0.3em;
+    padding-top: 0.1em;
+}
+
+.footer-email {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    footer{
+        height: 3.1em;
+        padding-bottom: 0.2em;
+        word-spacing: 0.2em;
+        letter-spacing: 0;
+    }
+
+    .footer-email {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}

@@ -98,17 +98,12 @@
                   <div class="col-auto">
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-puzzle-piece"></i></div>
+                        <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
                       </div>
-                      <select class="form-control" name="gameType" placeholder="Re Enter Password">
-                        <option value="" selected hidden="">Favourite Game Type</option>
-                        <option value="Cooperative" >Cooperative</option>
-                        <option value="Roll and Move" >Roll and Move</option>
-                        <option value="Deck Building" >Deck Building</option>
-                        <option value="Area Control" >Area Control</option>
-                        <option value="Puzzles" >Puzzles</option>
-                        <option value="Party Games" >Party Games</option>
-                        <option value="Secret Identity" >Secret Identity</option>
+                      <select class="form-control" name="id_town">
+                        <option value="" selected hidden="">City</option>
+                        <option value="1" >Cracow</option>
+                        <option value="2" >Warsow</option>
                       </select>
                     </div>
                   </div>
