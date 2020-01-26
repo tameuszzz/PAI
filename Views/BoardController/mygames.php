@@ -159,7 +159,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Picture</th>
                         <th>Name</th>
                         <th>Players</th>
                         <th>Description</th>

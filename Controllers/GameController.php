@@ -24,6 +24,28 @@ class GameController extends AppController {
         }
     }
 
+    public function searchGames() {
+        if (isset($_SESSION['id'])) {
+
+            $gameType = $_POST['gameType'];
+            $playersNum = $_POST['Players'];
+            $difficulty = $_POST['difficulty'];
+            $location = $_POST['id_town'];
+
+            $gameRepo = new GameRepository();
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo $gameRepo->getSearchGames($_SESSION['id'], $gameType, $playersNum, $difficulty, $location) ? json_encode($gameRepo->getSearchGames($_SESSION['id'], $gameType, $playersNum, $difficulty, $location)) : '';
+
+        }
+        else {
+            $url = "http://$_SERVER[HTTP_HOST]/PAI/";
+            header("Location: {$url}?page=login");
+        }
+    }
+
     public function gameDelete(): void
     {
 

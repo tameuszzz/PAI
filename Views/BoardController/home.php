@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="Public/css/navbar.css">
     <link rel="stylesheet" href="Public/css/search.css">
 
+    <script src="Public/js/searchgame.js"></script>
+
 </head>
 
 <body>
@@ -23,7 +25,7 @@
     <?php include("Views/Common/navbar.php") ?>
 
 
-    <div class="container text-center">
+    <div id="formDiv" class="container text-center">
         <div class="row">
             <div class="not-empty col-lg-12 col-md-12 col-sm-12">
                 <h1>Search for games</h1>
@@ -34,7 +36,7 @@
             <form action="?page=searchGames" method="POST">
                 <label>Type:</label>
                 <select name="gameType">
-                    <option value="" selected hidden="">Any...</option>
+                    <!-- <option value="" selected hidden="">Any...</option> -->
                     <option value="1" >Cooperative</option>
                     <option value="2" >Roll and Move</option>
                     <option value="3" >Deck Building</option>
@@ -49,7 +51,7 @@
                 <br>
                 <label>Difficulty:</label>
                 <select name="difficulty">
-                    <option value="" selected hidden="">Any...</option>
+                    <!-- <option value="" selected hidden="">Any...</option> -->
                     <option value="1" >Very Easy</option>
                     <option value="2" >Easy</option>
                     <option value="3" >Moderate</option>
@@ -58,13 +60,35 @@
                 <br>
                 <label>Location:</label>
                 <select name="id_town">
-                    <option value="" selected hidden="">Any</option>
+                    <!-- <option value="" selected hidden="">Any...</option> -->
                     <option value="1" >Cracow</option>
                     <option value="2" >Warsow</option>
                 </select>
                 <br>
-                <button>Search</button>
+                <button id="searchDiv" onclick="getSearchGames()">Search</button>
             </form>
+        </div>
+    </div>
+
+    <div id="resultDiv" class="container text-center">
+        <div class="row">
+            <div class="not-empty col-lg-12 col-md-12 col-sm-12">
+                <h1>Games we have:</h1>
+                <button>View</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Players</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="result-list">
+                    </tbody>
+                </table>
+
+            </div>
         </div>
     </div>
 

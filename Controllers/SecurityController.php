@@ -17,7 +17,11 @@ class SecurityController extends AppController {
 
             if ($userRepository->isUserRegistered($email, $password)) {
 
+                $user = $userRepository->getUser($email);
+
                 $_SESSION['id'] = $email;
+                $_SESSION['role'] = $user->getRole();
+
                 $url = "http://$_SERVER[HTTP_HOST]/PAI";
                 header("Location: {$url}?page=home");
 

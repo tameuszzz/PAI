@@ -48,7 +48,7 @@ function deleteGame(id_game) {
                 id_game : id_game
             },
             success: function() {
-                alert('Użytkownik został usunięty!');
+                alert('Game has been deleted!');
                 getMyGames();
             }
         })

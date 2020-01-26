@@ -90,6 +90,45 @@ class GameRepository extends Repository {
         }
     }
 
+    public function getSearchGames($email, $gameType, $playersNum, $difficulty, $location) {
+        $pdo = $this->database->connect();
+        try {
+
+            if(empty($playersNum)) {
+                $stmt = $pdo->prepare("SELECT * FROM game WHERE gameType_id=:gameType AND
+                                                                difficulty_id=:difficulty");
+            }
+            else {
+                $stmt = $pdo->prepare("SELECT * FROM game WHERE gameType_id=:gameType AND
+                                                                playersMin<=:playersNum AND
+                                                                playersMax>=:playersNum AND
+                                                                difficulty_id=:difficulty");
+
+                $stmt->bindParam(":playersNum", $playersNum, PDO::PARAM_STR);
+            }
+
+            $stmt->bindParam(":gameType", $gameType, PDO::PARAM_STR);
+            $stmt->bindParam(":difficulty", $difficulty, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if ($games === null)
+            {
+                die("query fail");
+                return null;
+            }
+
+            return $games;
+
+        } catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy. ECH";
+            die();
+        }
+
+    }
+
     public function deleteGame($id_game)
     {
         $pdo = $this->database->connect();

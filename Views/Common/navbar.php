@@ -6,6 +6,9 @@
         </button>
         <div class='collapse navbar-collapse' id='navbarResponsive'>
             <ul class='navbar-nav ml-auto'>
+                <?php if ($_SESSION['role'] === 2) { echo "<li class='nav-item'>
+                    <a class='nav-link active' href='?page=adminpanel'><i class='fas fa-user-shield'></i> Admin Panel</a>
+                </li>";}?>
                 <li class='nav-item'>
                     <a class='nav-link active' href='?page=profile'><i class='fas fa-user-alt'></i> Profile</a>
                 </li>

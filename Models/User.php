@@ -6,6 +6,7 @@ class User {
     private $gender;
     private $age;
     private $id_town;
+    private $id_role;
     private $description;
     private $photo;
     private $gameType;
@@ -17,10 +18,11 @@ class User {
         string $gender,
         string $age,
         string $town,
+        int $id_role,
+        int $id = null,
         string $description = "",
         string $photo = "",
-        int $gameType = 0,
-        int $id = null
+        int $gameType = 0
     ){
         $this->email = $email;
         $this->password = $password;
@@ -28,6 +30,7 @@ class User {
         $this->gender = $gender;
         $this->age = $age;
         $this->town = $town;
+        $this->id_role = $id_role;
         $this->description = $description;
         $this->photo = $photo;
         $this->gameType = $gameType;
@@ -62,6 +65,10 @@ class User {
         return $this->town;
     }
 
+    public function getRole(): int {
+        return $this->id_role;
+    }
+
     public function getDescription(): string {
         return $this->description;
     }
@@ -93,6 +100,10 @@ class User {
 
     public function setId_town($id_town): void {
         $this->id_town = $id_town;
+    }
+
+    public function setRole($id_role): void {
+        $this->id_role = $id_role;
     }
 
     public function setDescription($description): void {

@@ -63,6 +63,26 @@ class Routing {
             'messages' => [
                 'controller' => 'BoardController',
                 'action' => 'loadMessages'
+            ],
+            'adminpanel' => [
+                'controller' => 'AdminController',
+                'action' => 'index'
+            ],
+            'users' => [
+                'controller' => 'AdminController',
+                'action' => 'users'
+            ],
+            'admin_delete_user' => [
+                'controller' => 'AdminController',
+                'action' => 'deleteUser'
+            ],
+            'admin_give_admin' => [
+                'controller' => 'AdminController',
+                'action' => 'giveAdmin'
+            ],
+            'admin_deny_admin' => [
+                'controller' => 'AdminController',
+                'action' => 'denyAdmin'
             ]
         ];
     }

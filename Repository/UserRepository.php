@@ -41,7 +41,9 @@ class UserRepository extends Repository {
                     $user['name'],
                     $user['gender'],
                     $user['age'],
-                    $userTown['name']
+                    $userTown['name'],
+                    $user['id_role'],
+                    $user['id_user']
                 );
             }
 
@@ -52,6 +54,8 @@ class UserRepository extends Repository {
                 $user['gender'],
                 $user['age'],
                 $userTown['name'],
+                $user['id_role'],
+                $user['id_user'],
                 $userInfo['description'],
                 $userInfo['photo'],
                 $userInfo['id_gametype']
@@ -180,26 +184,84 @@ class UserRepository extends Repository {
         }
     }
 
-    public function getUsers(): array {
-        $result = [];
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user
-        ');
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function getUsers($email) {
 
-        foreach ($users as $user) {
-            $result[] = new User(
-                $user['email'],
-                $user['password'],
-                $user['name'],
-                $user['gender'],
-                $user['age'],
-                $user['gameType'],
-            );
+        $pdo  = $this->database->connect();
+        try {
+            // $result = [];
+            $stmt = $pdo->prepare('SELECT * FROM user WHERE email != :email');
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // foreach ($users as $user) {
+            //     $result[] = new User(
+            //         $user['email'],
+            //         $user['password'],
+            //         $user['name'],
+            //         $user['gender'],
+            //         $user['age'],
+            //         $user['gameType'],
+            //     );
+            // }
+
+            return $users;
+
+        }catch (PDOException $e) {
+            echo "Błąd z bazą danych. Za utrudnienia przepraszamy.";
+            die();
+        }
+    }
+
+    public function deleteUser($id_user) {
+        $pdo = $this->database->connect();
+        try {
+            $stmt = $pdo->prepare("DELETE from user where user.id_user = :id_user");
+            $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pdo = null;
+
+        } catch (PDOException $e) {
+            echo "Database connection error in User Repository: ". $e->getMessage();
+            die();
         }
 
-        return $result;
+    }
+
+    public function giveAdmin($id_user)
+    {
+        $pdo = $this->database->connect();
+        try {
+            $stmt = $pdo->prepare("UPDATE user set user.id_role = '2' where user.id_user = :id_user");
+            $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pdo = null;
+
+        } catch (PDOException $e) {
+            echo "Database connection error in User Repository: ". $e->getMessage();
+            die();
+        }
+
+    }
+
+    public function denyAdmin($id_user)
+    {
+        $pdo = $this->database->connect();
+        try {
+            $stmt = $pdo->prepare("UPDATE user set user.id_role = '1' where user.id_user = :id_user");
+            $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pdo = null;
+
+        } catch (PDOException $e) {
+            echo "Database connection error in User Repository: ". $e->getMessage();
+            die();
+        }
+
     }
 
 }
